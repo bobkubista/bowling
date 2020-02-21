@@ -1,4 +1,4 @@
-package bowling;
+package com.bobkubista.bowling;
 
 
 public class Roll {
