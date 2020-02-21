@@ -2,10 +2,16 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.bobkubista.bowling</groupId>
+	<groupId>com.bobkubista</groupId>
 	<artifactId>bowling</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>bowling</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven-surefire-report-plugin.version>3.0.0-M4</maven-surefire-report-plugin.version>
+	</properties>
+
 	<build>
 		<sourceDirectory>src/main/java</sourceDirectory>
 		<testSourceDirectory>src/test/java</testSourceDirectory>
@@ -18,8 +24,32 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+				<version>${maven-surefire-report-plugin.version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven-surefire-report-plugin.version}</version>
+				<configuration>
+					<forkCount>1.5C</forkCount>
+				</configuration>
+			</plugin>
 		</plugins>
+
 	</build>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+				<version>${maven-surefire-report-plugin.version}</version>
+			</plugin>
+		</plugins>
+	</reporting>
 
 	<dependencies>
 		<dependency>
