@@ -2,6 +2,7 @@ package com.bobkubista.bowling;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
 
 public class Game {
 
@@ -9,9 +10,7 @@ public class Game {
     private int currentFrame = 0;
 
     public Game() {
-        for (int i = 0; i < 9; i++) {
-            this.frames.add(new Frame());
-        }
+        IntStream.range(0, 9).forEach(i -> this.frames.add(new Frame()));
         this.frames.add(new TenthFrame());
     }
 
