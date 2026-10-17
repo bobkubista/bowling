@@ -1,6 +1,6 @@
 package com.bobkubista.bowling;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -17,7 +17,7 @@ public class StepDefs {
 
 	@When("I ask whether it's Friday yet")
 	public void i_ask_whether_it_s_Friday_yet() {
-		actualAnswer = IsItFriday.isItFriday(today);
+		actualAnswer = isItFriday(today);
 	}
 
 	@Then("I should be told {string}")
@@ -25,11 +25,8 @@ public class StepDefs {
 		assertEquals(expectedAnswer, actualAnswer);
 	}
 
-	class IsItFriday {
-		static String isItFriday(String today) {
-			return "Friday".equals(today) ? "TGIF" : "Nope";
-
-		}
+	// Tutorial scaffolding; replace with bowling scenarios
+	private static String isItFriday(String today) {
+		return "Friday".equals(today) ? "TGIF" : "Nope";
 	}
-
 }
