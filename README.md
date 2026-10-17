@@ -13,3 +13,12 @@ for that frame is the value of the next two balls rolled.
 In the tenth frame a player who rolls a spare or strike is allowed to roll the extra
 balls to complete the frame.  However no more than three balls can be rolled in
 tenth frame.
+
+## Build
+
+Requires Java 25 and Maven 3.9 or newer.
+
+- `mvn verify` runs the tests, JaCoCo coverage and the Spotless format check.
+- `mvn spotless:apply` fixes the formatting when the check fails.
+
+Jenkins on the kvm-server cluster builds every branch and sends the results to SonarQube.
