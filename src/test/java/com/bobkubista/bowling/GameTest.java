@@ -15,13 +15,13 @@ class GameTest {
 	}
 
 	@Test
-	public void testGutterGame() {
+	void testGutterGame() {
 		rollMany(20, 0);
 		assertEquals(0, game.score());
 	}
 
 	@Test
-	public void testAllOnes() {
+	void testAllOnes() {
 		rollMany(20, 1);
 		assertEquals(20, game.score());
 	}
@@ -33,7 +33,7 @@ class GameTest {
 	}
 
 	@Test
-	public void testOneSpare() {
+	void testOneSpare() {
 		rollSpare();
 		game.roll(3);
 		rollMany(17, 0);
@@ -41,7 +41,7 @@ class GameTest {
 	}
 
 	@Test
-	public void testOneSpareAtEnd() {
+	void testOneSpareAtEnd() {
 		rollMany(18, 0);
 		rollSpare();
 		game.roll(3);
@@ -49,7 +49,7 @@ class GameTest {
 	}
 
 	@Test
-	public void testOneStrike() {
+	void testOneStrike() {
 		rollStrike();
 		game.roll(3);
 		game.roll(4);
@@ -58,7 +58,7 @@ class GameTest {
 	}
 
 	@Test
-	public void testPerfectGame() {
+	void testPerfectGame() {
 		rollMany(12, 10);
 		assertEquals(300, game.score());
 
